@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(273, 100%, 4%);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+  background-color: hsl(353, 61%, 57%);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  font-family: "sans";
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 30%;
+}
+
+.responsive-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 70%;
+  height: 100%;
+}
+
+.nav-container ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-inline: 1em;
+  font-family: "sans";
+}
+
+.nav-item a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.navbar-buttons {
+  display: flex;
+}
+
+.btn {
+  font-family: "sans";
+  margin-inline: 1em;
+  background-color: hsl(22, 49%, 92%);
+  border-radius: 15px;
+  padding: 0.5em 0.75em;
+}
+
+.btn button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+.burger-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (width < 1024px) {
+  .navbar {
+    justify-content: space-between;
+    padding-inline: 1em;
+  }
+
+  .responsive-container {
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    top: 8em;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 20em;
+    height: 20em;
+    background-color: hsl(353, 61%, 57%);
+    border-radius: 15px;
+    transform: translateY(-400%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-container ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin-block: 0.75em;
+  }
+
+  .burger-icon {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+  }
+}
+
+@media screen and (width < 500px) {
+  .burger-icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+  }
+}
+
+.nav-active {
+  transform: translateY(0%);
+}
