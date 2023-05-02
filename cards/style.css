@@ -127,7 +127,9 @@ body {
 }
 
 .card:hover .movie-desc,
-.card:hover .movie-desc p {
+.card:hover .movie-desc p,
+.card:active .movie-desc,
+.card:active .movie-desc p {
   display: block;
   animation: fadeIn 0.3s;
 }
