@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(218, 215, 205);
+}
+
+/* Cards container */
+
+.cards {
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: normal center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
+@media screen and (width < 1500px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media screen and (width < 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media screen and (width < 800px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Card */
+
+.card {
+  min-width: 15em;
+  max-width: 20em;
+}
+
+/* Poster */
+
+.image-container {
+  width: 100%;
+  background-color: rgb(52, 78, 65);
+  border-radius: 15px 15px 0 0;
+}
+
+.image-container img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+/* Movie name & Rating */
+
+.movie-info-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 3.5em;
+  padding-inline: 1em;
+  background-color: rgb(52, 78, 65);
+  color: #fff;
+}
+
+.movie-title {
+  height: 100%;
+  font-family: "sans";
+  font-weight: bold;
+  font-size: 1rem;
+  place-self: center normal;
+}
+
+.movie-stars {
+  height: 100%;
+  place-self: center end;
+}
+
+.movie-title,
+.movie-stars {
+  display: flex;
+  align-items: center;
+}
+
+/* Movie description */
+
+.movie-desc {
+  display: none;
+  height: 20em;
+  padding: 1em;
+  background-color: rgb(52, 78, 65);
+  border-top: 3px solid rgba(58, 90, 64);
+  border-radius: 0 0 15px 15px;
+}
+
+.movie-desc p {
+  color: white;
+  font-family: "sans";
+  text-align: justify;
+}
+
+/* Show desc */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 20em;
+  }
+}
+
+.card:hover .movie-desc,
+.card:hover .movie-desc p {
+  display: block;
+  animation: fadeIn 0.3s;
+}
